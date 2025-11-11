@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BanMo AI</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <nav class="page-index" aria-label="Section index">
+      <button class="page-index__handle" type="button">
+        ≡
+      </button>
+      <ul class="page-index__list">
+        <li><a href="#audio-processing">音频处理 · Audio Processing</a></li>
+        <li><a href="#speech-recognition">语音识别 · Speech Recognition</a></li>
+        <li><a href="#speech-synthesis">语音合成 · Speech Synthesis</a></li>
+        <li><a href="#speech-editing">语音编辑 · Speech Editing</a></li>
+        <li><a href="#video-editing">视频编辑 · Video Editing</a></li>
+        <li><a href="#video-translation">视频翻译 · Video Translation</a></li>
+      </ul>
+    </nav>
+    <header class="hero" id="top">
+      <div class="hero__content">
+        <h1 class="hero__title">
+          BanMo AI: 一站式影音平台
+          <br />
+          One-Stop Audio & Video Platform
+        </h1>
+        <p class="hero__subtitle">
+          覆盖从预处理到多语言分发的全链路能力，帮助用户快速构建影音产品。
+          <br />
+          Full-spectrum audio & video solutions spanning enhancement, recognition,
+          synthesis, editing, speaker analytics, and multilingual delivery.
+        </p>
+        <div class="hero__grid">
+          <a class="feature-card feature-card--accent1" href="#audio-processing">
+            <h2 class="feature-card__title">
+              音频处理
+              <br />
+              Audio Processing
+            </h2>
+            <p class="feature-card__caption">
+              语音降噪、音频上采样、背景音分离
+              <br />
+              Denoise, upsampling, and separation
+            </p>
+          </a>
+          <a
+            class="feature-card feature-card--accent2"
+            href="#speech-recognition"
+          >
+            <h2 class="feature-card__title">
+              语音识别
+              <br />
+              Speech Recognition
+            </h2>
+            <p class="feature-card__caption">
+              多语言文本对齐、时间轴、置信度可视化
+              <br />
+              Multilingual transcripts, timelines, confidence heatmaps
+            </p>
+          </a>
+          <a class="feature-card feature-card--accent3" href="#speech-synthesis">
+            <h2 class="feature-card__title">
+              语音合成
+              <br />
+              Speech Synthesis
+            </h2>
+            <p class="feature-card__caption">
+              多音色、多语种配音样例展示
+              <br />
+              Curated voiceovers with diverse voices and emotional expressions
+            </p>
+          </a>
+          <a class="feature-card feature-card--accent4" href="#speech-editing">
+            <h2 class="feature-card__title">
+              语音编辑
+              <br />
+              Speech Editing
+            </h2>
+            <p class="feature-card__caption">
+              文本驱动编辑、节奏与音色微调流程
+              <br />
+              Text-driven editing and pacing refinement samples
+            </p>
+          </a>
+          <a class="feature-card feature-card--accent5" href="#video-editing">
+            <h2 class="feature-card__title">
+              视频编辑
+              <br />
+              Video Editing
+            </h2>
+            <p class="feature-card__caption">
+              口型同步与动作迁移视频展示
+              <br />
+              Lip sync and motion transfer previews
+            </p>
+          </a>
+          <a
+            class="feature-card feature-card--accent6"
+            href="#video-translation"
+          >
+            <h2 class="feature-card__title">
+              视频翻译
+              <br />
+              Video Translation
+            </h2>
+            <p class="feature-card__caption">
+              多语言视频翻译与高表现力配音
+              <br />
+              Multilingual video translation with expressive dubbing previews
+            </p>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="demo-section" id="audio-processing">
+        <div class="demo-section__inner">
+          <div class="demo-section__header">
+            <h2 class="demo-section__title">
+              音频处理
+              <br />
+              Audio Processing
+            </h2>
+            <p class="demo-section__subtitle">
+              通过频谱拖动与波形试听观察音频处理效果：语音降噪、音频上采样、背景音分离三种能力一键体验。
+              <br />
+              Use interactive sliders and waveform players to compare denoise, upsampling, and separation results.
+            </p>
+          </div>
+          <div class="demo-section__content demo-section__content--wide">
+            <div class="tab-panel">
+              <div class="tab-panel__tabs" role="tablist">
+                <button
+                  class="tab-button is-active"
+                  data-target="tab-denoise"
+                  role="tab"
+                >
+                  语音降噪
+                  <br />
+                  Denoise
+                </button>
+                <button
+                  class="tab-button"
+                  data-target="tab-upsample"
+                  role="tab"
+                >
+                  音频上采样
+                  <br />
+                  Upsampling
+                </button>
+                <button
+                  class="tab-button"
+                  data-target="tab-separation"
+                  role="tab"
+                >
+                  背景音分离
+                  <br />
+                  Separation
+                </button>
+              </div>
+              <div class="tab-panel__content is-active" id="tab-denoise" role="tabpanel">
+                <div class="audio-processing__list" id="denoise-list">
+                  <p class="speech-editing__placeholder">正在加载降噪示例...</p>
+                </div>
+              </div>
+              <div class="tab-panel__content" id="tab-upsample" role="tabpanel">
+                <div class="audio-processing__list" id="upsampling-list">
+                  <p class="speech-editing__placeholder">正在加载上采样示例...</p>
+                </div>
+              </div>
+              <div class="tab-panel__content" id="tab-separation" role="tabpanel">
+                <div class="audio-processing__separation" id="separation-list">
+                  <p class="speech-editing__placeholder">正在加载分离示例...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section" id="speech-recognition">
+        <div class="demo-section__inner">
+          <div class="demo-section__header">
+            <h2 class="demo-section__title">
+              语音识别
+              <br />
+              Speech Recognition
+            </h2>
+            <p class="demo-section__subtitle">
+              综合展示多语言识别的说话人分类、时间轴、置信度与段落文本，突出准确性与标注质量。
+              <br />
+              Curated recognition samples highlighting speaker classification, timestamps, confidence, and multilingual transcripts.
+            </p>
+          </div>
+          <div class="demo-section__content demo-section__content--stacked">
+            <div class="recognition-shell">
+              <div class="recognition-layout">
+                <div class="recognition-list" id="recognition-list">
+                  <p class="speech-editing__placeholder">正在加载语音识别示例...</p>
+                </div>
+                <div class="recognition-viewer" id="recognition-viewer">
+                  <p class="speech-editing__placeholder">请选择示例以查看波形与字幕</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section" id="speech-synthesis">
+        <div class="demo-section__inner">
+          <div class="demo-section__header">
+            <h2 class="demo-section__title">
+              语音合成
+              <br />
+              Speech Synthesis
+            </h2>
+            <p class="demo-section__subtitle">
+              精选样例展示多语种配音效果，包含文本片段、目标音色与合成试听。
+              <br />
+              Showcase voiceovers with script excerpts, target voices, and playback controls.
+            </p>
+          </div>
+          <div class="demo-section__content demo-section__content--stacked">
+            <div class="synthesis-list" id="synthesis-list">
+              <p class="speech-editing__placeholder">
+                正在加载语音合成示例...
+                <br />
+                Loading speech synthesis demos...
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section" id="speech-editing">
+        <div class="demo-section__inner">
+          <div class="demo-section__header">
+            <h2 class="demo-section__title">
+              语音编辑
+              <br />
+              Speech Editing
+            </h2>
+            <p class="demo-section__subtitle">
+              文本驱动的语句替换：对比原始音频与编辑后音频，直观查看差异片段。
+              <br />
+              Text-driven edits with side-by-side audio playback and inline diff highlights.
+            </p>
+          </div>
+          <div class="speech-editing__examples" id="speech-editing-list">
+            <p class="speech-editing__placeholder">
+              正在加载语音编辑示例...
+              <br />
+              Loading speech editing examples...
+            </p>
+          </div>
+        </div>
+      </section>
+      
+      <section class="demo-section" id="video-editing">
+        <div class="demo-section__inner">
+          <div class="demo-section__header">
+            <h2 class="demo-section__title">
+              视频编辑
+              <br />
+              Video Editing
+            </h2>
+            <p class="demo-section__subtitle">
+              预览口型同步与动作迁移示例。
+              <br />
+              Video editing demos for lip sync and motion transfer scenarios.
+            </p>
+          </div>
+          <div class="demo-section__content demo-section__content--wide">
+            <div class="tab-panel">
+              <div class="tab-panel__tabs" role="tablist">
+                <button class="tab-button is-active" data-target="tab-motion" role="tab">
+                  动作迁移
+                  <br />
+                  Motion Transfer
+                </button>
+                <button class="tab-button" data-target="tab-lip-sync" role="tab">
+                  口型同步
+                  <br />
+                  Lip Sync
+                </button>
+              </div>
+              <div class="tab-panel__content tab-panel__content--fullwidth is-active" id="tab-motion" role="tabpanel">
+                <div class="video-editing-grid">
+                  <div class="video-editing__sidebar">
+                    <div class="recognition-list" id="motion-transfer-case-list">
+                      <p class="speech-editing__placeholder">正在加载动作迁移案例占位...</p>
+                    </div>
+                  </div>
+                  <div class="video-editing__viewer">
+                    <div class="video-editing__player">
+                      <div class="video-editing__frame">
+                        <video class="video-editing__video" id="motion-transfer-video" controls preload="metadata">
+                          <source src="" type="video/mp4" />
+                          您的浏览器不支持此视频播放。
+                        </video>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-panel__content tab-panel__content--fullwidth" id="tab-lip-sync" role="tabpanel">
+                <div class="video-editing-grid">
+                  <div class="video-editing__sidebar">
+                    <div class="recognition-list" id="lip-sync-case-list">
+                      <p class="speech-editing__placeholder">正在加载口型同步案例占位...</p>
+                    </div>
+                  </div>
+                  <div class="video-editing__viewer">
+                    <div class="video-editing__player-wrapper">
+                      <div class="video-editing__player">
+                        <div class="video-editing__frame">
+                          <div
+                            class="video-editing__variant video-editing__variant--overlay"
+                            id="lip-sync-video-toggle"
+                            role="group"
+                            aria-label="Lip variant toggle"
+                          >
+                            <button
+                              type="button"
+                              class="video-editing__variant-button video-editing__variant-button--overlay is-active"
+                              data-variant="original"
+                            >
+                              <span class="video-editing__variant-code">OR</span>
+                            </button>
+                            <button
+                              type="button"
+                              class="video-editing__variant-button video-editing__variant-button--overlay"
+                              data-variant="edited"
+                            >
+                              <span class="video-editing__variant-code">ED</span>
+                            </button>
+                          </div>
+                          <video class="video-editing__video" id="lip-sync-video" controls preload="metadata">
+                            <source src="" type="video/mp4" />
+                            您的浏览器不支持此视频播放。
+                          </video>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section" id="video-translation">
+        <div class="demo-section__inner">
+          <div class="demo-section__header">
+            <h2 class="demo-section__title">
+              视频翻译
+              <br />
+              Video Translation
+            </h2>
+            <p class="demo-section__subtitle">
+              呈现多语言视频翻译体验，包含固定示例视频、字幕预览与目标语言切换。
+              <br />
+              Walkthrough of multilingual dubbing with curated clips and language switching.
+            </p>
+          </div>
+          <div class="demo-section__content demo-section__content--stacked">
+              <div class="translation-panel">
+              <div class="translation-panel__meta">
+                <div class="meta-block">
+                  <span class="meta-block__text">源语言</span>
+                  <span class="meta-block__text meta-block__text--sub">
+                    Source Language
+                  </span>
+                </div>
+                <span class="meta-value" id="video-source-language">--</span>
+                <label class="meta-block meta-block--label" for="video-target-select">
+                  <span class="meta-block__text">目标语言</span>
+                  <span class="meta-block__text meta-block__text--sub">
+                    Target Language
+                  </span>
+                </label>
+                <div class="meta-select-wrapper">
+                  <select
+                    id="video-target-select"
+                    class="meta-select"
+                    aria-label="原视频 / Original Video"
+                    disabled
+                  >
+                    <option value="">原视频 / Original Video</option>
+                  </select>
+                </div>
+              </div>
+              <div class="demo-media demo-media--video">
+                <video
+                  id="video-demo-player"
+                  class="translation-video"
+                  controls
+                  preload="metadata"
+                  poster=""
+                >
+                  <source id="video-demo-source" src="" type="video/mp4" />
+                  您的浏览器不支持此视频播放
+                  <br />
+                  Your browser does not support HTML5 video.
+                </video>
+              </div>
+              <div class="thumbnail-strip" id="video-demos-list"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer-contact">
+          <div class="footer-contact__text">
+            <p class="footer-contact__title">Contact</p>
+            <a class="footer-contact__email" href="mailto:approximetal@gmail.com">
+              approximetal@gmail.com
+            </a>
+          </div>
+          <div class="footer-contact__qr" aria-label="WeChat QR">
+            <img src="assets/contact/wechat.jpg" alt="WeChat QR code" />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#top" class="back-to-top" aria-label="返回顶部 · Back to top">
+      <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+        <path d="M6 14l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </a>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

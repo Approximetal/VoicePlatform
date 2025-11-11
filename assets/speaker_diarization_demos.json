@@ -1,0 +1,60 @@
+{
+  "generatedAt": "2025-11-20T01:36:58.862360+00:00",
+  "demos": [
+    {
+      "id": "baiyun_heitu",
+      "title": "Baiyun Heitu",
+      "audio": "demos/Speaker_Diarization/baiyun_heitu/baiyun_heitu.mp3",
+      "subtitles": [
+        {
+          "start": 0.09,
+          "end": 1.512,
+          "speaker": "说话人1",
+          "text": "我叫白云"
+        },
+        {
+          "start": 1.52,
+          "end": 2.96,
+          "speaker": "说话人2",
+          "text": "我叫黑土"
+        },
+        {
+          "start": 3.34,
+          "end": 4.674,
+          "speaker": "说话人1",
+          "text": "我七十一"
+        },
+        {
+          "start": 4.674,
+          "end": 5.757,
+          "speaker": "说话人2",
+          "text": "我七十五"
+        },
+        {
+          "start": 5.75,
+          "end": 6.749,
+          "speaker": "说话人1",
+          "text": "我属鸡"
+        },
+        {
+          "start": 6.74,
+          "end": 7.61,
+          "speaker": "说话人2",
+          "text": "我属虎"
+        },
+        {
+          "start": 7.61,
+          "end": 8.786,
+          "speaker": "说话人1",
+          "text": "这是我老公"
+        },
+        {
+          "start": 8.786,
+          "end": 10.78,
+          "speaker": "说话人2",
+          "text": "这是我老母"
+        }
+      ]
+    }
+  ]
+}
