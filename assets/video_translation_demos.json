@@ -11,61 +11,61 @@
         "labelEnglish": "English"
       },
       "thumbnail": "demos/Video_Translation/a_trueman_cut_en/a_trueman_cut_en.jpg",
-      "originalVideo": "demos/Video_Translation/a_trueman_cut_en/a_trueman_cut_en.mp4",
+      "originalVideo": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Video_Translation/a_trueman_cut_en/a_trueman_cut_en.mp4",
       "translations": [
         {
           "code": "de",
           "labelNative": "德语",
           "labelEnglish": "German",
-          "video": "demos/Video_Translation/a_trueman_cut_en/a_trueman_cut_en_de.mp4"
+          "video": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Video_Translation/a_trueman_cut_en/a_trueman_cut_en_de.mp4"
         },
         {
           "code": "es",
           "labelNative": "西班牙语",
           "labelEnglish": "Spanish",
-          "video": "demos/Video_Translation/a_trueman_cut_en/a_trueman_cut_en_es.mp4"
+          "video": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Video_Translation/a_trueman_cut_en/a_trueman_cut_en_es.mp4"
         },
         {
           "code": "fr",
           "labelNative": "法语",
           "labelEnglish": "French",
-          "video": "demos/Video_Translation/a_trueman_cut_en/a_trueman_cut_en_fr.mp4"
+          "video": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Video_Translation/a_trueman_cut_en/a_trueman_cut_en_fr.mp4"
         },
         {
           "code": "id",
           "labelNative": "印尼语",
           "labelEnglish": "Indonesian",
-          "video": "demos/Video_Translation/a_trueman_cut_en/a_trueman_cut_en_id.mp4"
+          "video": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Video_Translation/a_trueman_cut_en/a_trueman_cut_en_id.mp4"
         },
         {
           "code": "it",
           "labelNative": "意大利语",
           "labelEnglish": "Italian",
-          "video": "demos/Video_Translation/a_trueman_cut_en/a_trueman_cut_en_it.mp4"
+          "video": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Video_Translation/a_trueman_cut_en/a_trueman_cut_en_it.mp4"
         },
         {
           "code": "pt",
           "labelNative": "葡萄牙语",
           "labelEnglish": "Portuguese",
-          "video": "demos/Video_Translation/a_trueman_cut_en/a_trueman_cut_en_pt.mp4"
+          "video": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Video_Translation/a_trueman_cut_en/a_trueman_cut_en_pt.mp4"
         },
         {
           "code": "ru",
           "labelNative": "俄语",
           "labelEnglish": "Russian",
-          "video": "demos/Video_Translation/a_trueman_cut_en/a_trueman_cut_en_ru.mp4"
+          "video": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Video_Translation/a_trueman_cut_en/a_trueman_cut_en_ru.mp4"
         },
         {
           "code": "vi",
           "labelNative": "越南语",
           "labelEnglish": "Vietnamese",
-          "video": "demos/Video_Translation/a_trueman_cut_en/a_trueman_cut_en_vi.mp4"
+          "video": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Video_Translation/a_trueman_cut_en/a_trueman_cut_en_vi.mp4"
         },
         {
           "code": "zh",
           "labelNative": "中文",
           "labelEnglish": "Chinese",
-          "video": "demos/Video_Translation/a_trueman_cut_en/a_trueman_cut_en_zh.mp4"
+          "video": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Video_Translation/a_trueman_cut_en/a_trueman_cut_en_zh.mp4"
         }
       ]
     },
@@ -78,13 +78,13 @@
         "labelEnglish": "Chinese"
       },
       "thumbnail": "demos/Video_Translation/bullet_zh/bullet_zh.jpg",
-      "originalVideo": "demos/Video_Translation/bullet_zh/bullet_zh.mp4",
+      "originalVideo": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Video_Translation/bullet_zh/bullet_zh.mp4",
       "translations": [
         {
           "code": "en",
           "labelNative": "英语",
           "labelEnglish": "English",
-          "video": "demos/Video_Translation/bullet_zh/bullet_zh_en.mp4"
+          "video": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Video_Translation/bullet_zh/bullet_zh_en.mp4"
         }
       ]
     },
@@ -97,19 +97,19 @@
         "labelEnglish": "Chinese"
       },
       "thumbnail": "demos/Video_Translation/dahuaxiyou_cut_zh/dahuaxiyou_cut_zh.jpg",
-      "originalVideo": "demos/Video_Translation/dahuaxiyou_cut_zh/dahuaxiyou_cut_zh.mp4",
+      "originalVideo": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Video_Translation/dahuaxiyou_cut_zh/dahuaxiyou_cut_zh.mp4",
       "translations": [
         {
           "code": "en",
           "labelNative": "英语",
           "labelEnglish": "English",
-          "video": "demos/Video_Translation/dahuaxiyou_cut_zh/dahuaxiyou_cut_zh_en.mp4"
+          "video": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Video_Translation/dahuaxiyou_cut_zh/dahuaxiyou_cut_zh_en.mp4"
         },
         {
           "code": "vi",
           "labelNative": "越南语",
           "labelEnglish": "Vietnamese",
-          "video": "demos/Video_Translation/dahuaxiyou_cut_zh/dahuaxiyou_cut_zh_vi.mp4"
+          "video": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Video_Translation/dahuaxiyou_cut_zh/dahuaxiyou_cut_zh_vi.mp4"
         }
       ]
     },
@@ -122,13 +122,13 @@
         "labelEnglish": "Chinese"
       },
       "thumbnail": "demos/Video_Translation/duanjv2_cuts_zh/duanjv2_cuts_zh.jpg",
-      "originalVideo": "demos/Video_Translation/duanjv2_cuts_zh/duanjv2_cuts_zh.mp4",
+      "originalVideo": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Video_Translation/duanjv2_cuts_zh/duanjv2_cuts_zh.mp4",
       "translations": [
         {
           "code": "en",
           "labelNative": "英语",
           "labelEnglish": "English",
-          "video": "demos/Video_Translation/duanjv2_cuts_zh/duanjv2_cuts_zh_en.mp4"
+          "video": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Video_Translation/duanjv2_cuts_zh/duanjv2_cuts_zh_en.mp4"
         }
       ]
     }
