@@ -5,7 +5,7 @@
       "id": "baiyun_heitu_zh",
       "title": "Baiyun Heitu Zh",
       "language": "zh",
-      "audio": "demos/Speech_Recognition/baiyun_heitu_zh/baiyun_heitu_zh.mp3",
+      "audio": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Speech_Recognition/baiyun_heitu_zh/baiyun_heitu_zh.mp3",
       "duration": 9.993,
       "sentences": [
         {
@@ -270,7 +270,7 @@
       "id": "niu_bee_en",
       "title": "Niu Bee En",
       "language": "en",
-      "audio": "demos/Speech_Recognition/niu_bee_en/niu_bee_cut_en.mp3",
+      "audio": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Speech_Recognition/niu_bee_en/niu_bee_cut_en.mp3",
       "duration": 21.062,
       "sentences": [
         {

@@ -29,8 +29,8 @@
         "edited": "再来看这个戴红宝石项链的少女，你看这个少女这个耳环，看这个喉结，哎呀！"
       },
       "audio": {
-        "before": "demos/Speech_Editing/multilingual/V-0000_zh-CN.mp3",
-        "after": "demos/Speech_Editing/multilingual/V-0000_zh-CN_edit.mp3"
+        "before": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Speech_Editing/multilingual/V-0000_zh-CN.mp3",
+        "after": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Speech_Editing/multilingual/V-0000_zh-CN_edit.mp3"
       }
     },
     {
@@ -60,8 +60,8 @@
         "edited": "Sabemos que investigar toma mucho esfuerzo la información que necesitas suele estar dispersa e incompleta."
       },
       "audio": {
-        "before": "demos/Speech_Editing/multilingual/V-0016_es-CL.mp3",
-        "after": "demos/Speech_Editing/multilingual/V-0016_es-CL_edit.mp3"
+        "before": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Speech_Editing/multilingual/V-0016_es-CL.mp3",
+        "after": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Speech_Editing/multilingual/V-0016_es-CL_edit.mp3"
       }
     },
     {
@@ -91,8 +91,8 @@
         "edited": "Ich habe ihn in den letzten Videos gezeigt, wie sie die Tastatur mit einem PC oder einem Mac verbinden."
       },
       "audio": {
-        "before": "demos/Speech_Editing/multilingual/V-0040_de-DE.mp3",
-        "after": "demos/Speech_Editing/multilingual/V-0040_de-DE_edit.mp3"
+        "before": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Speech_Editing/multilingual/V-0040_de-DE.mp3",
+        "after": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Speech_Editing/multilingual/V-0040_de-DE_edit.mp3"
       }
     },
     {
@@ -122,8 +122,8 @@
         "edited": "Em seguida, vou te ensinar como criar vídeos curtos incríveis no seu celular em apenas alguns segundos, abra o aplicativo Blink captions."
       },
       "audio": {
-        "before": "demos/Speech_Editing/multilingual/V-0046_pt-BR.mp3",
-        "after": "demos/Speech_Editing/multilingual/V-0046_pt-BR_edit.mp3"
+        "before": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Speech_Editing/multilingual/V-0046_pt-BR.mp3",
+        "after": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Speech_Editing/multilingual/V-0046_pt-BR_edit.mp3"
       }
     },
     {
@@ -153,8 +153,8 @@
         "edited": "Kamila's daughter Olivia was beautiful, She was the best dancer in school and her marks were way better than Chloe's."
       },
       "audio": {
-        "before": "demos/Speech_Editing/multilingual/V-0185_en-US.mp3",
-        "after": "demos/Speech_Editing/multilingual/V-0185_en-US_edit.mp3"
+        "before": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Speech_Editing/multilingual/V-0185_en-US.mp3",
+        "after": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Speech_Editing/multilingual/V-0185_en-US_edit.mp3"
       }
     }
   ]

@@ -13,8 +13,8 @@
         "after": "demos/Audio_Processing/Denoise/V-0003_en-US_22kHz_denoise.jpg"
       },
       "audio": {
-        "before": "demos/Audio_Processing/Denoise/V-0003_en-US_22kHz.mp3",
-        "after": "demos/Audio_Processing/Denoise/V-0003_en-US_22kHz_denoise.mp3"
+        "before": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Audio_Processing/Denoise/V-0003_en-US_22kHz.mp3",
+        "after": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Audio_Processing/Denoise/V-0003_en-US_22kHz_denoise.mp3"
       }
     }
   ],
@@ -31,8 +31,8 @@
         "after": "demos/Audio_Processing/Upsampling/test1_cut1_upsampling.jpg"
       },
       "audio": {
-        "before": "demos/Audio_Processing/Upsampling/test1_cut1.mp3",
-        "after": "demos/Audio_Processing/Upsampling/test1_cut1_upsampling.mp3"
+        "before": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Audio_Processing/Upsampling/test1_cut1.mp3",
+        "after": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Audio_Processing/Upsampling/test1_cut1_upsampling.mp3"
       }
     }
   ],
@@ -41,17 +41,17 @@
       {
         "labelNative": "原音频",
         "labelEnglish": "Original",
-        "file": "demos/Audio_Processing/Separation/A_thousand_years_raw.mp3"
+        "file": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Audio_Processing/Separation/A_thousand_years_raw.mp3"
       },
       {
         "labelNative": "分离后的人声",
         "labelEnglish": "Vocal",
-        "file": "demos/Audio_Processing/Separation/A_thousand_years_vocal.mp3"
+        "file": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Audio_Processing/Separation/A_thousand_years_vocal.mp3"
       },
       {
         "labelNative": "分离后的背景音",
         "labelEnglish": "Instrumental",
-        "file": "demos/Audio_Processing/Separation/A_thousand_years_instrumental.mp3"
+        "file": "https://voiceplatform.oss-cn-shenzhen.aliyuncs.com/demos/Audio_Processing/Separation/A_thousand_years_instrumental.mp3"
       }
     ]
   }
