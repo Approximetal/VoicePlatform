@@ -686,7 +686,8 @@ function createSynthesisWaveTrack(audioSrc) {
   canvas.addEventListener("pointerdown", seekHandler.onPointerDown);
 
   requestAnimationFrame(() => {
-    prepareWaveform(canvas, audioSrc, { height: 56 });
+    const waveformSrc = deriveWaveformUrl(audioSrc);
+    prepareWaveform(canvas, audioSrc, { height: 56, waveformSrc });
     scheduleWaveformRefresh();
   });
 
@@ -1118,7 +1119,8 @@ async function initSpeechRecognitionSection() {
     ensureSentenceDisplayed(-1, { showFallback: true });
 
     requestAnimationFrame(() => {
-      prepareWaveform(canvas, demo.audio);
+      const waveformSrc = deriveWaveformUrl(demo.audio);
+      prepareWaveform(canvas, demo.audio, { waveformSrc });
       scheduleWaveformRefresh();
     });
   }
@@ -1311,7 +1313,8 @@ function createWaveTrack(track) {
   canvas.addEventListener("pointerdown", seekHandler.onPointerDown);
 
   requestAnimationFrame(() => {
-    prepareWaveform(canvas, track.file);
+    const waveformSrc = deriveWaveformUrl(track.file);
+    prepareWaveform(canvas, track.file, { waveformSrc });
   });
 
   return wrapper;
@@ -1324,7 +1327,33 @@ async function prepareWaveform(canvas, src, options = {}) {
       parentWidth > 0
         ? parentWidth
         : Math.max(360, Math.floor(window.innerWidth || 600));
-    const peaks = await extractPeaksFromFile(src, width);
+    const waveformSrc = options.waveformSrc ?? deriveWaveformUrl(src);
+    let peaks = null;
+
+    if (waveformSrc) {
+      try {
+        peaks = await fetchPrecomputedPeaks(waveformSrc);
+      } catch (error) {
+        console.warn(`Failed to load precomputed waveform for ${src}`, error);
+      }
+    }
+
+    if (!peaks || !peaks.length) {
+      // Only attempt raw-audio decoding when the source is same-origin, to
+      // avoid additional CORS failures for remote OSS assets.
+      try {
+        const audioUrl = new URL(src, window.location.href);
+        if (audioUrl.origin === window.location.origin) {
+          peaks = await extractPeaksFromFile(src, width);
+        }
+      } catch {
+        // ignore URL parse errors and fall through to placeholder rendering
+      }
+    }
+
+    if (!peaks || !peaks.length) {
+      throw new Error("Waveform extraction returned no peaks.");
+    }
     canvas._peaks = peaks;
     if (typeof options.height === "number") {
       canvas._waveHeight = options.height;
@@ -1349,6 +1378,60 @@ async function extractPeaksFromFile(src, peakCount) {
     audioCtx.decodeAudioData(arrayBuffer.slice(0), resolve, reject);
   });
   return extractPeaks(audioBuffer, peakCount);
+}
+
+function deriveWaveformUrl(audioSrc) {
+  if (!audioSrc) return null;
+  if (/\.waveform\.json($|\?)/i.test(audioSrc)) {
+    return audioSrc;
+  }
+  try {
+    const url = new URL(audioSrc, window.location.href);
+    const originalPath = url.pathname;
+    const newPath = originalPath.replace(/\.(mp3|wav|m4a|ogg)$/i, ".waveform.json");
+    if (newPath === originalPath) return null;
+
+    // If audio is same-origin, keep origin; otherwise prefer a local JSON
+    // path that mirrors the remote /demos/... structure to avoid CORS.
+    if (url.origin === window.location.origin) {
+      url.pathname = newPath;
+      return url.toString();
+    }
+    return new URL(newPath, window.location.origin).toString();
+  } catch {
+    if (/\.(mp3|wav|m4a|ogg)(\?.*)?$/i.test(audioSrc)) {
+      return audioSrc.replace(/\.(mp3|wav|m4a|ogg)(\?.*)?$/i, ".waveform.json$2");
+    }
+  }
+  return null;
+}
+
+async function fetchPrecomputedPeaks(waveformUrl) {
+  if (!waveformUrl) throw new Error("Missing waveform URL");
+  const response = await fetch(waveformUrl, { cache: "no-cache" });
+  if (!response.ok) {
+    throw new Error(`Waveform HTTP ${response.status}`);
+  }
+  const data = await response.json();
+  let peaks = null;
+  if (Array.isArray(data.peaks)) {
+    peaks = data.peaks;
+  } else if (Array.isArray(data.samples)) {
+    peaks = data.samples;
+  }
+  if (!peaks) {
+    throw new Error("Waveform JSON missing 'peaks' or 'samples' array");
+  }
+  return peaks.map((entry) => {
+    if (typeof entry === "number") {
+      const amplitude = Math.abs(entry);
+      return { min: -amplitude, max: amplitude };
+    }
+    return {
+      min: typeof entry.min === "number" ? entry.min : 0,
+      max: typeof entry.max === "number" ? entry.max : 0,
+    };
+  });
 }
 
 function getAudioContext() {
