@@ -687,7 +687,11 @@ function createSynthesisWaveTrack(audioSrc) {
 
   requestAnimationFrame(() => {
     const waveformSrc = deriveWaveformUrl(audioSrc);
-    prepareWaveform(canvas, audioSrc, { height: 56, waveformSrc });
+    prepareWaveform(canvas, audioSrc, {
+      height: 56,
+      waveformSrc,
+      enableWaveform: true,
+    });
     scheduleWaveformRefresh();
   });
 
@@ -1120,7 +1124,10 @@ async function initSpeechRecognitionSection() {
 
     requestAnimationFrame(() => {
       const waveformSrc = deriveWaveformUrl(demo.audio);
-      prepareWaveform(canvas, demo.audio, { waveformSrc });
+      prepareWaveform(canvas, demo.audio, {
+        waveformSrc,
+        enableWaveform: true,
+      });
       scheduleWaveformRefresh();
     });
   }
@@ -1314,7 +1321,10 @@ function createWaveTrack(track) {
 
   requestAnimationFrame(() => {
     const waveformSrc = deriveWaveformUrl(track.file);
-    prepareWaveform(canvas, track.file, { waveformSrc });
+    prepareWaveform(canvas, track.file, {
+      waveformSrc,
+      enableWaveform: true,
+    });
   });
 
   return wrapper;
@@ -1330,7 +1340,7 @@ async function prepareWaveform(canvas, src, options = {}) {
     const waveformSrc = options.waveformSrc ?? deriveWaveformUrl(src);
     let peaks = null;
 
-    if (waveformSrc) {
+    if (options.enableWaveform && waveformSrc) {
       try {
         peaks = await fetchPrecomputedPeaks(waveformSrc);
       } catch (error) {
@@ -1338,7 +1348,7 @@ async function prepareWaveform(canvas, src, options = {}) {
       }
     }
 
-    if (!peaks || !peaks.length) {
+    if (options.enableWaveform && (!peaks || !peaks.length)) {
       // Only attempt raw-audio decoding when the source is same-origin, to
       // avoid additional CORS failures for remote OSS assets.
       try {
@@ -1397,7 +1407,8 @@ function deriveWaveformUrl(audioSrc) {
       url.pathname = newPath;
       return url.toString();
     }
-    return new URL(newPath, window.location.origin).toString();
+    // return new URL(newPath, window.location.origin).toString();
+    return new URL(newPath, window.location.href).toString();
   } catch {
     if (/\.(mp3|wav|m4a|ogg)(\?.*)?$/i.test(audioSrc)) {
       return audioSrc.replace(/\.(mp3|wav|m4a|ogg)(\?.*)?$/i, ".waveform.json$2");
