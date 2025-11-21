@@ -1401,14 +1401,18 @@ function deriveWaveformUrl(audioSrc) {
     const newPath = originalPath.replace(/\.(mp3|wav|m4a|ogg)$/i, ".waveform.json");
     if (newPath === originalPath) return null;
 
-    // If audio is same-origin, keep origin; otherwise prefer a local JSON
-    // path that mirrors the remote /demos/... structure to avoid CORS.
+    // 如果音频与当前页面同源，直接用当前 origin + 新路径
     if (url.origin === window.location.origin) {
       url.pathname = newPath;
       return url.toString();
     }
-    // return new URL(newPath, window.location.origin).toString();
-    return new URL(newPath, window.location.href).toString();
+
+    // 远端 OSS 等跨域音频：把 /demos/... 映射到当前页面所在目录下，
+    // 兼容 GitHub Pages 项目路径前缀（例如 /VoicePlatform/）。
+    const pagePath = window.location.pathname; // 如 /VoicePlatform/ 或 /VoicePlatform/index.html
+    const basePath = pagePath.replace(/\/[^/]*$/, "/"); // 截到目录，保留末尾 /
+    const normalizedNewPath = newPath.replace(/^\//, ""); // 去掉前导 /
+    return `${window.location.origin}${basePath}${normalizedNewPath}`;
   } catch {
     if (/\.(mp3|wav|m4a|ogg)(\?.*)?$/i.test(audioSrc)) {
       return audioSrc.replace(/\.(mp3|wav|m4a|ogg)(\?.*)?$/i, ".waveform.json$2");
