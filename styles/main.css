@@ -827,7 +827,6 @@ main {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  /* 避免分离波形在窄屏上横向贴边或略微溢出，保持与下方模块一致的左右留白 */
   max-width: 760px;
   margin: 0 auto;
   width: 100%;
@@ -1326,7 +1325,8 @@ main {
 }
 
 .wave-track__canvas canvas {
-  width: 100%;
+  width: 100% !important;   /* % */
+  height: auto; 
   /* height: 90px; */
   display: block;
   touch-action: none;
@@ -1712,10 +1712,6 @@ main {
     width: 100%;
   }
 
-  .audio-processing__separation,
-  .audio-processing__list {
-    gap: 16px;
-  }
 
   .wave-track {
     flex-direction: column;
@@ -1791,43 +1787,4 @@ main {
   width: 100%;
   align-items: center;
   text-align: center;
-}
-
-@media (max-width: 540px) {
-  .wave-track {
-    padding: 14px 12px;
-    gap: 12px;
-  }
-
-  .wave-track__button {
-    width: 40px;
-    height: 40px;
-  }
-
-  .wave-track__label {
-    font-size: 0.9rem;
-    line-height: 1.45;
-  }
-
-  .audio-processing__list,
-  .audio-processing__separation {
-    gap: 14px;
-  }
-
-  /* Mobile: 给 Separation 的波形左右留一点内边距，避免视觉上贴边或出框 */
-  .audio-processing__separation .wave-track {
-    max-width: 100%;
-    margin: 0 auto;
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
-  .edit-audio-controls {
-    gap: 12px;
-  }
-
-  .edit-audio-controls,
-  .wave-track__content {
-    width: 100%;
-  }
 }

@@ -1374,7 +1374,7 @@ async function prepareWaveform(canvas, src, options = {}) {
   } catch (error) {
     console.warn("Failed to render waveform:", error);
     const ctx = canvas.getContext("2d");
-    canvas.width = canvas.parentElement?.clientWidth || 600;
+    canvas.width = canvas.parentElement?.clientWidth;
     canvas.height = 60;
     ctx.fillStyle = "#d8dfef";
     ctx.fillRect(0, canvas.height / 2 - 1, canvas.width, 2);
@@ -1592,6 +1592,19 @@ function refreshWaveformCanvases() {
   });
 }
 
+function refreshAllWaveforms() {
+  const canvases = document.querySelectorAll(".wave-track__canvas canvas");
+  canvases.forEach((canvas) => {
+    if (canvas._peaks) {
+      const parentWidth = Math.floor(canvas.parentElement?.clientWidth || 0);
+      if (parentWidth > 0) {
+        canvas.width = parentWidth;
+        updateWaveformCanvas(canvas, canvas._peaks, 0);
+      }
+    }
+  });
+}
+
 function scheduleWaveformRefresh() {
   if (waveformRefreshScheduled) return;
   waveformRefreshScheduled = true;
@@ -1600,3 +1613,21 @@ function scheduleWaveformRefresh() {
     waveformRefreshScheduled = false;
   });
 }
+
+let resizeTimer = null;
+
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    const canvases = document.querySelectorAll(".wave-track__canvas canvas");
+    canvases.forEach(canvas => {
+      const parentWidth = canvas.parentElement.clientWidth;
+      if (parentWidth > 0) {
+        canvas.width = parentWidth;    // ← 关键：重新设置像素宽度
+        if (canvas._peaks) {
+          updateWaveformCanvas(canvas, canvas._peaks, 0);
+        }
+      }
+    });
+  }, 150);
+});
