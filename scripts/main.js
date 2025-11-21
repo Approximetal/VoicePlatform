@@ -1324,6 +1324,7 @@ function createWaveTrack(track) {
     prepareWaveform(canvas, track.file, {
       waveformSrc,
       enableWaveform: true,
+      height: 56,
     });
   });
 
