@@ -1,0 +1,161 @@
+{
+  "generatedAt": "2025-11-20T01:36:27.304627+00:00",
+  "exampleCount": 5,
+  "examples": [
+    {
+      "id": "V-0000_zh-CN",
+      "language": {
+        "code": "zh-CN",
+        "labelNative": "中文",
+        "labelEnglish": "Chinese"
+      },
+      "segments": [
+        {
+          "type": "text",
+          "text": "再来看这个戴"
+        },
+        {
+          "type": "diff",
+          "before": "珍珠耳环",
+          "after": "红宝石项链"
+        },
+        {
+          "type": "text",
+          "text": "的少女，你看这个少女这个耳环，看这个喉结，哎呀！"
+        }
+      ],
+      "text": {
+        "original": "再来看这个戴珍珠耳环的少女，你看这个少女这个耳环，看这个喉结，哎呀！",
+        "edited": "再来看这个戴红宝石项链的少女，你看这个少女这个耳环，看这个喉结，哎呀！"
+      },
+      "audio": {
+        "before": "demos/Speech_Editing/multilingual/V-0000_zh-CN.mp3",
+        "after": "demos/Speech_Editing/multilingual/V-0000_zh-CN_edit.mp3"
+      }
+    },
+    {
+      "id": "V-0016_es-CL",
+      "language": {
+        "code": "es-CL",
+        "labelNative": "es-CL",
+        "labelEnglish": "es-CL"
+      },
+      "segments": [
+        {
+          "type": "text",
+          "text": "Sabemos que investigar toma "
+        },
+        {
+          "type": "diff",
+          "before": "bastante tiempo",
+          "after": "mucho esfuerzo"
+        },
+        {
+          "type": "text",
+          "text": " la información que necesitas suele estar dispersa e incompleta."
+        }
+      ],
+      "text": {
+        "original": "Sabemos que investigar toma bastante tiempo la información que necesitas suele estar dispersa e incompleta.",
+        "edited": "Sabemos que investigar toma mucho esfuerzo la información que necesitas suele estar dispersa e incompleta."
+      },
+      "audio": {
+        "before": "demos/Speech_Editing/multilingual/V-0016_es-CL.mp3",
+        "after": "demos/Speech_Editing/multilingual/V-0016_es-CL_edit.mp3"
+      }
+    },
+    {
+      "id": "V-0040_de-DE",
+      "language": {
+        "code": "de-DE",
+        "labelNative": "Deutsch",
+        "labelEnglish": "German"
+      },
+      "segments": [
+        {
+          "type": "text",
+          "text": "Ich habe ihn in den letzten Videos gezeigt, wie sie "
+        },
+        {
+          "type": "diff",
+          "before": "das Mischpult",
+          "after": "die Tastatur"
+        },
+        {
+          "type": "text",
+          "text": " mit einem PC oder einem Mac verbinden."
+        }
+      ],
+      "text": {
+        "original": "Ich habe ihn in den letzten Videos gezeigt, wie sie das Mischpult mit einem PC oder einem Mac verbinden.",
+        "edited": "Ich habe ihn in den letzten Videos gezeigt, wie sie die Tastatur mit einem PC oder einem Mac verbinden."
+      },
+      "audio": {
+        "before": "demos/Speech_Editing/multilingual/V-0040_de-DE.mp3",
+        "after": "demos/Speech_Editing/multilingual/V-0040_de-DE_edit.mp3"
+      }
+    },
+    {
+      "id": "V-0046_pt-BR",
+      "language": {
+        "code": "pt-BR",
+        "labelNative": "Português (Brasil)",
+        "labelEnglish": "Portuguese (Brazil)"
+      },
+      "segments": [
+        {
+          "type": "text",
+          "text": "Em seguida, vou te ensinar como criar "
+        },
+        {
+          "type": "diff",
+          "before": "legendas animadas",
+          "after": "vídeos curtos"
+        },
+        {
+          "type": "text",
+          "text": " incríveis no seu celular em apenas alguns segundos, abra o aplicativo Blink captions."
+        }
+      ],
+      "text": {
+        "original": "Em seguida, vou te ensinar como criar legendas animadas incríveis no seu celular em apenas alguns segundos, abra o aplicativo Blink captions.",
+        "edited": "Em seguida, vou te ensinar como criar vídeos curtos incríveis no seu celular em apenas alguns segundos, abra o aplicativo Blink captions."
+      },
+      "audio": {
+        "before": "demos/Speech_Editing/multilingual/V-0046_pt-BR.mp3",
+        "after": "demos/Speech_Editing/multilingual/V-0046_pt-BR_edit.mp3"
+      }
+    },
+    {
+      "id": "V-0185_en-US",
+      "language": {
+        "code": "en-US",
+        "labelNative": "English",
+        "labelEnglish": "English"
+      },
+      "segments": [
+        {
+          "type": "text",
+          "text": "Kamila's daughter Olivia was beautiful, She was the best "
+        },
+        {
+          "type": "diff",
+          "before": "cheerleader in town",
+          "after": "dancer in school"
+        },
+        {
+          "type": "text",
+          "text": " and her marks were way better than Chloe's."
+        }
+      ],
+      "text": {
+        "original": "Kamila's daughter Olivia was beautiful, She was the best cheerleader in town and her marks were way better than Chloe's.",
+        "edited": "Kamila's daughter Olivia was beautiful, She was the best dancer in school and her marks were way better than Chloe's."
+      },
+      "audio": {
+        "before": "demos/Speech_Editing/multilingual/V-0185_en-US.mp3",
+        "after": "demos/Speech_Editing/multilingual/V-0185_en-US_edit.mp3"
+      }
+    }
+  ]
+}

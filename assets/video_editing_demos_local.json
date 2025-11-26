@@ -1,0 +1,52 @@
+{
+  "generatedAt": "2025-11-20T08:08:03.053083+00:00",
+  "lipSync": [
+    {
+      "id": "GDG_zh",
+      "title": "Case1",
+      "videos": {
+        "original": "demos/Video_Editing/lip_sync/GDG_zh/GDG_zh.mp4",
+        "translated": "demos/Video_Editing/lip_sync/GDG_zh/GDG_zh_en.mp4"
+      },
+      "duration": "0:28"
+    },
+    {
+      "id": "ishiewang_zh",
+      "title": "Case2",
+      "videos": {
+        "original": "demos/Video_Editing/lip_sync/ishiewang_zh/ishiewang_zh.mp4",
+        "translated": "demos/Video_Editing/lip_sync/ishiewang_zh/ishiewang_zh_es.mp4"
+      },
+      "duration": "0:30"
+    },
+    {
+      "id": "pat_kay_en",
+      "title": "Case3",
+      "videos": {
+        "original": "demos/Video_Editing/lip_sync/pat_kay_en/pat_kay_en.mp4",
+        "translated": "demos/Video_Editing/lip_sync/pat_kay_en/pat_kay_en_es.mp4"
+      },
+      "duration": "0:30"
+    }
+  ],
+  "motionTransfer": [
+    {
+      "id": "Case1",
+      "title": "Case1",
+      "video": "demos/Video_Editing/motion_transfer/case1.mp4",
+      "duration": "0:17"
+    },
+    {
+      "id": "Case2",
+      "title": "Case2",
+      "video": "demos/Video_Editing/motion_transfer/case2.mp4",
+      "duration": "0:19"
+    },
+    {
+      "id": "Case3",
+      "title": "Case3",
+      "video": "demos/Video_Editing/motion_transfer/case3.mp4",
+      "duration": "0:17"
+    }
+  ]
+}
