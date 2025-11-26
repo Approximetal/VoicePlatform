@@ -45,6 +45,9 @@ def main() -> None:
         if not text_files:
             continue
 
+        target_variants: List[Dict[str, Any]] = []
+        source_text_value = ""
+
         for text_file in text_files:
             target_code = text_file.stem.rsplit("_", 1)[-1]
             target_audio = find_audio(folder / text_file.stem)
@@ -56,19 +59,34 @@ def main() -> None:
                 continue
             source_text = lines[0].strip()
             target_text = lines[1].strip() if len(lines) > 1 else ""
+            if not source_text_value:
+                source_text_value = source_text
 
-            entries.append(
+            target_variants.append(
                 {
-                    "id": f"{base_name}__{target_code}",
-                    "title": base_name.replace("_", " ").title(),
-                    "sourceLanguage": source_lang,
-                    "targetLanguage": target_code,
-                    "sourceText": source_text,
-                    "targetText": target_text,
-                    "sourceAudio": str(source_audio.relative_to(ROOT).as_posix()),
-                    "targetAudio": str(target_audio.relative_to(ROOT).as_posix()),
+                    "language": target_code,
+                    "text": target_text,
+                    "audio": str(target_audio.relative_to(ROOT).as_posix()),
                 }
             )
+
+        if not target_variants:
+            continue
+
+        primary_target = target_variants[0]
+        entry = {
+            "id": base_name,
+            "title": base_name.replace("_", " ").title(),
+            "sourceLanguage": source_lang,
+            "sourceText": source_text_value,
+            "sourceAudio": str(source_audio.relative_to(ROOT).as_posix()),
+            "targets": target_variants,
+            # 兼容旧版结构
+            "targetLanguage": primary_target.get("language", ""),
+            "targetText": primary_target.get("text", ""),
+            "targetAudio": primary_target.get("audio", ""),
+        }
+        entries.append(entry)
 
     payload = {"generatedAt": datetime.now(timezone.utc).isoformat(), "demos": entries}
     OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2))

@@ -592,10 +592,46 @@ function createSynthesisCard(entry) {
   const card = document.createElement("article");
   card.className = "synthesis-card";
   card.append(
-    createSynthesisBlock("source", entry.sourceLanguage, entry.sourceText, entry.sourceAudio),
-    createSynthesisBlock("target", entry.targetLanguage, entry.targetText, entry.targetAudio)
+    createSynthesisBlock("source", entry.sourceLanguage, entry.sourceText, entry.sourceAudio)
   );
+
+  const targets = normalizeSynthesisTargets(entry);
+  if (!targets.length) {
+    const placeholder = document.createElement("p");
+    placeholder.className = "speech-editing__placeholder";
+    placeholder.textContent = "暂无合成示例 · No target voices.";
+    card.appendChild(placeholder);
+  } else {
+    targets.forEach((target) => {
+      card.appendChild(
+        createSynthesisBlock("target", target.language, target.text, target.audio)
+      );
+    });
+  }
   return card;
+}
+
+function normalizeSynthesisTargets(entry) {
+  if (Array.isArray(entry.targets) && entry.targets.length) {
+    return entry.targets.map((target) => ({
+      language: target.language || entry.targetLanguage || "",
+      text:
+        typeof target.text === "string" && target.text.length
+          ? target.text
+          : entry.targetText || "",
+      audio: target.audio || entry.targetAudio || "",
+    }));
+  }
+  if (entry.targetAudio) {
+    return [
+      {
+        language: entry.targetLanguage || "",
+        text: entry.targetText || "",
+        audio: entry.targetAudio,
+      },
+    ];
+  }
+  return [];
 }
 
 function createSynthesisBlock(role, langCode, text, audioSrc) {
