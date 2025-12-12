@@ -12,17 +12,11 @@
           "language": "en",
           "text": "The weather is perfect today, a great day for a trip to the seaside.",
           "audio": "demos/Speech_Synthesis/adelemam_ar/adelemam_ar_en.mp3"
-        },
-        {
-          "language": "ar",
-          "text": "الطقس رائع اليوم، إنه يوم مثالي للذهاب إلى الشاطئ.",
-          "audio": "demos/Speech_Synthesis/adelemam_ar/adelemam_ar_ar.mp3"
         }
-
       ],
-      "targetLanguage": "ar",
-      "targetText": "الطقس رائع اليوم، إنه يوم مثالي للذهاب إلى الشاطئ.",
-      "targetAudio": "demos/Speech_Synthesis/adelemam_ar/adelemam_ar_ar.mp3"
+      "targetLanguage": "en",
+      "targetText": "The weather is perfect today, a great day for a trip to the seaside.",
+      "targetAudio": "demos/Speech_Synthesis/adelemam_ar/adelemam_ar_en.mp3"
     },
     {
       "id": "mabaoguo_zh",
